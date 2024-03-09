@@ -11,13 +11,14 @@ Refer to "report/Project Proposal.pdf" for more information
 ## Setup
 
 1. Create a conda environment / virtual env with the python version "3.8.18"
-2. Install nes-py by following the instructions from https://github.com/Kautenja/nes-py based on your OS.
-3. Install super mario gym environment from https://github.com/Kautenja/gym-super-mario-bros
-
+2. Install Gym 0.10.9 `pip install gym==0.10.9`. (This contains a compatible interface with the mario gym version)
+3. Install nes-py by following the instructions from https://github.com/Kautenja/nes-py based on your OS.
+3. Install super mario gym environment from https://github.com/Kautenja/gym-super-mario-bros. This repo also contains all the relevant information about how the gym environment is structured.
+4. Try running the code under agents/random/agent.py to check if the environment is setup correctly.
 
 ## Structure
 
-1. algorithms/* : Contains the model code for each RL algorithm
+1. agents/* : Contains the model code for each agent
 2. data/plays/* : Examples of interesting runs by our agents
 3. data/manual/* : Examples of manual playing
 4. evaluation: Contains jupyter notebooks where we analyse performance of specific models / let them play
