@@ -21,11 +21,11 @@ Refer to "report/Project Proposal.pdf" for more information
 
 1. agents/* : Contains the model code for each agent
 3. data/* : Saving the plays by agents
-4. evaluation: Contains jupyter notebooks where we analyse performance of specific models / let them play
-5. models: Contains our trained model files (or) links to them for loading into our agent
-6. report: Contains our project report & proposal
-7. train: Contains jupyter notebooks where we attempt to train our various RL agents
-8. utils: Contains utility code which can be reused across the project
+4. evaluation/* : Contains jupyter notebooks where we analyse performance of specific models / let them play
+5. models/* : Contains our trained model files (or) links to them for loading into our agent
+6. report/* : Contains our project report & proposal
+7. train/* : Contains jupyter notebooks where we attempt to train our various RL agents
+8. utils/* : Contains utility code which can be reused across the project
 
 ## Manual Play Contorls
 
