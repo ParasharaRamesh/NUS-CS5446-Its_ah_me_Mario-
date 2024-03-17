@@ -43,10 +43,16 @@ def random_agent(level, steps=500, record=False, buffer=[]):
 
 
 if __name__ == '__main__':
-    level = "SuperMarioBros2-v0"
+    #<world> is a number in {1, 2, 3, 4, 5, 6, 7, 8} indicating the world
+    world = 1
+    # <stage> is a number in {1, 2, 3, 4} indicating the stage within a world
+    stage = 2
+
+    # SuperMarioBros-<world>-<stage>-v<version>
+    level = f"SuperMarioBros-{world}-{stage}-v2"
 
     # one attempt
-    random_agent(level, steps=100, record=True)
-
-    # another attempt
-    random_agent(level, record=True)
+    random_agent(level, steps=10000, record=False)
+    #
+    # # another attempt
+    # random_agent(level, record=True)

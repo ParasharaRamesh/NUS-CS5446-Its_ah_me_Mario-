@@ -108,9 +108,21 @@ def record_with_human_play(env: gym.Env, level, buffer=[], record=False):
 
 
 if __name__ == '__main__':
+    # <world> is a number in {1, 2, 3, 4, 5, 6, 7, 8} indicating the world
+    world = 1
+    # <stage> is a number in {1, 2, 3, 4} indicating the stage within a world
+    stage = 1
+
+    version = 0
+
+    # this is the pixelated version!
+    # version = 2
+
+    # SuperMarioBros-<world>-<stage>-v<version>
+    level = f"SuperMarioBros-{world}-{stage}-v{version}"
+
     # sample level can be changed
-    level = "SuperMarioBros2-v0"
     env = gym_super_mario_bros.make(level)
     env = JoypadSpace(env, SIMPLE_MOVEMENT)
 
-    record_with_human_play(env, record=True, level=level)
+    record_with_human_play(env, record=False, level=level)
