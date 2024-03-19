@@ -14,7 +14,7 @@ from pyglet import clock
 import pickle
 from tqdm import tqdm
 
-from utils.manual import save_play
+from utils.record import save_play
 
 # the sentinel value for "No Operation"
 _NOP = 0

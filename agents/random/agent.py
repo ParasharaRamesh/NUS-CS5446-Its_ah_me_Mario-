@@ -3,7 +3,7 @@ import gym_super_mario_bros
 from gym_super_mario_bros.actions import SIMPLE_MOVEMENT
 from tqdm import tqdm
 
-from utils.manual import save_play
+from utils.record import save_play
 
 
 def random_agent(level, steps=500, record=False, buffer=[]):
