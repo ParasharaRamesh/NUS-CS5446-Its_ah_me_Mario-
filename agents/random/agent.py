@@ -1,16 +1,13 @@
-from nes_py.wrappers import JoypadSpace
-import gym_super_mario_bros
-from gym_super_mario_bros.actions import SIMPLE_MOVEMENT
 from tqdm import tqdm
 
+from utils.game import create_gym_env_from_level
 from utils.record import save_play
 
 
 def random_agent(level, steps=500, record=False, buffer=[]):
     print("Starting random agent..")
     # create gym environment
-    env = gym_super_mario_bros.make(level)
-    env = JoypadSpace(env, SIMPLE_MOVEMENT)
+    env = create_gym_env_from_level(level)
 
     # play it
     done = True
