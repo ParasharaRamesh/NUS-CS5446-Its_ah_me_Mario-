@@ -1,8 +1,8 @@
 import gym_super_mario_bros
-from gym_super_mario_bros.actions import SIMPLE_MOVEMENT
-from nes_py.wrappers import JoypadSpace
 import gym
+
 from custom_env import _register_all_coin_collector_envs
+from game.wrappers import env_wrapper_transform
 
 
 def create_gym_env_from_level(world, stage, version, use_coin_collector_env):
@@ -18,8 +18,9 @@ def create_gym_env_from_level(world, stage, version, use_coin_collector_env):
             _register_all_coin_collector_envs()
 
         assert level in set(
-            gym.envs.registration.registry.env_specs.copy().keys()), f"Looks like {level} was not registered correctly!"
+            gym.envs.registration.registry.env_specs.copy().keys()
+        ), f"Looks like {level} was not registered correctly!"
         env = gym.make(level)
 
-    env = JoypadSpace(env, SIMPLE_MOVEMENT)
+    env = env_wrapper_transform(env)
     return env
