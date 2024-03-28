@@ -4,7 +4,7 @@ Idea is to build a custom reward function to include the score as well.
 Need to somehow get the score gained between time steps as a reward.
 '''
 from gym_super_mario_bros import SuperMarioBrosEnv
-
+import gym
 from utils.constants import COIN_COLLECTOR_ENV_REWARD_RANGE
 
 
@@ -27,3 +27,4 @@ class CoinCollectorSuperMarioBrosEnv(SuperMarioBrosEnv):
     # This should override the parent function
     def _get_reward(self):
         return self._x_reward + self._score_reward + self._time_penalty + self._death_penalty
+

@@ -1,13 +1,13 @@
 from tqdm import tqdm
 
-from utils.game import create_gym_env_from_level
+from game.environment import create_gym_env_from_level
 from utils.record import save_play
 
 
-def random_agent(level, steps=500, record=False, buffer=[]):
+def random_agent(world, stage, version, use_coin_collector_env=False, steps=500, record=False, buffer=[]):
     print("Starting random agent..")
     # create gym environment
-    env = create_gym_env_from_level(level)
+    env = create_gym_env_from_level(world, stage, version, use_coin_collector_env)
 
     # play it
     done = True
@@ -32,6 +32,8 @@ def random_agent(level, steps=500, record=False, buffer=[]):
         env.render()
 
     if record:
+        level_suffix = f"{world}-{stage}-v{version}"
+        level = f"SuperMarioBros-{level_suffix}" if not use_coin_collector_env else f"CoinCollectorSuperMarioBrosEnv-{level_suffix}"
         # save it as a pickle file
         save_play(buffer, level, agent="random")
 
@@ -40,16 +42,14 @@ def random_agent(level, steps=500, record=False, buffer=[]):
 
 
 if __name__ == '__main__':
-    #<world> is a number in {1, 2, 3, 4, 5, 6, 7, 8} indicating the world
+    # <world> is a number in {1, 2, 3, 4, 5, 6, 7, 8} indicating the world
     world = 1
     # <stage> is a number in {1, 2, 3, 4} indicating the stage within a world
     stage = 2
-
-    # SuperMarioBros-<world>-<stage>-v<version>
-    level = f"SuperMarioBros-{world}-{stage}-v2"
+    version = 2
 
     # one attempt
-    random_agent(level, steps=10000, record=False)
+    random_agent(world, stage, version, steps=10000, record=False)
     #
     # # another attempt
     # random_agent(level, record=True)

@@ -9,7 +9,7 @@ import gym
 import time
 from pyglet import clock
 
-from utils.game import create_gym_env_from_level
+from game.environment import create_gym_env_from_level
 from utils.record import save_play
 
 # the sentinel value for "No Operation"
@@ -114,10 +114,11 @@ if __name__ == '__main__':
     # this is the pixelated version!
     # version = 2
 
-    # SuperMarioBros-<world>-<stage>-v<version>
-    level = f"SuperMarioBros-{world}-{stage}-v{version}"
+    use_coin_collector_env = True
+    level_suffix = f"{world}-{stage}-v{version}"
+    level = f"SuperMarioBros-{level_suffix}" if not use_coin_collector_env else f"CoinCollectorSuperMarioBrosEnv-{level_suffix}"
 
     # sample level can be changed
-    env = create_gym_env_from_level(level)
+    env = create_gym_env_from_level(world, stage, version, use_coin_collector_env)
 
     record_with_human_play(env, record=False, level=level)
