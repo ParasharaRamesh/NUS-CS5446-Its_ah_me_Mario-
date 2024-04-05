@@ -2,7 +2,6 @@ import gym_super_mario_bros
 import gym
 
 from custom_env import _register_all_coin_collector_envs
-from game.wrappers import env_wrapper_transform
 
 
 def create_gym_env_from_level(world, stage, version, use_coin_collector_env):
@@ -22,5 +21,4 @@ def create_gym_env_from_level(world, stage, version, use_coin_collector_env):
         ), f"Looks like {level} was not registered correctly!"
         env = gym.make(level)
 
-    env = env_wrapper_transform(env)
     return env
