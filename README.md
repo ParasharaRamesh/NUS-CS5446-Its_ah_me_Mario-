@@ -10,24 +10,32 @@ Refer to "report/Project Proposal.pdf" for more information
 
 ## Setup
 
-1. Create a conda environment / virtual env with the python version "3.8.18"
-2. Install Gym 0.17.2 `pip install gym==0.17.2`. (This contains a compatible interface with the mario gym version)
+1. Create a conda environment / virtual env with the python version "3.10.12"
+2. Run the following commands
+`
+# gym 0.21 installation is broken with more recent versions
+pip install setuptools==65.5.0 pip==21  
+pip install wheel==0.38.0
+pip -qq install stable-baselines3==1.6.0
+pip install -qq gym-super-mario-bros
+# for ensuring tensorboard works
+pip install tensorflow
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+`
 3. Install nes-py by following the instructions from https://github.com/Kautenja/nes-py based on your OS.
-4. Install super mario gym environment from https://github.com/Kautenja/gym-super-mario-bros. This repo also contains all the relevant information about how the gym environment is structured.
-5. Try running the code under agents/random/agent.py to check if the environment is set up correctly. It should additionally save a play under the data folder.
-6. Try running the code under agents/human/agent.py to play a custom game (refer to manual play controls below). It should additionally save a play under the data folder. 
+4. Try running the code under agents/random/agent.py to check if the environment is set up correctly. It should additionally save a play under the data folder.
+5. Try running the code under agents/human/agent.py to play a custom game (refer to manual play controls below). It should additionally save a play under the data folder. 
 
 ## Structure
 
-1. agents/* : Contains the model code for each agent
-3. data/* : Saving the plays by agents
-4. evaluation/* : Contains jupyter notebooks where we analyse performance of specific models / let them play
-5. models/* : Contains our trained model files (or) links to them for loading into our agent
-6. report/* : Contains our project report & proposal
-7. train/* : Contains jupyter notebooks where we attempt to train our various RL agents
-8. utils/* : Contains utility code which can be reused across the project
+1. agents/* : Contains the ipynb notebooks for training the different agents
+2. logs/* : Tensorboard logs for each model run
+3. evaluation/* : Contains jupyter notebooks where we analyse performance of specific models / let them play
+4. models/* : Contains our trained model files (or) links to them for loading into our agent
+5. report/* : Contains our project report & proposal
+6. utils/* : Contains utility code which can be reused across the project
 
-## Manual Play Contorls
+## Manual Play Controls (for human agent)
 
 | Keyboard Key | NES Joypad |
 |:-------------|:-----------|
