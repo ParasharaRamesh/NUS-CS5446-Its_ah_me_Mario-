@@ -8,11 +8,11 @@ New Reference: https://www.kaggle.com/code/deeplyai/super-mario-bros-with-stable
 But set pip and wheel version using:
 pip install setuptools==65.5.0 pip==21  # gym 0.21 installation is broken with more recent versions
 pip install wheel==0.38.0
-
-2.!pip -qq install stable-baselines3==1.6.0
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+pip -qq install stable-baselines3==1.6.0
 pip install stable-baselines3
 pip install -qq gym-super-mario-bros
-pip install tensorboard
+pip install tensorflow (this is primarly for tensorboard)
 
 
 Use this for video reply if training in colab:
