@@ -13,12 +13,10 @@ Refer to "report/Project Proposal.pdf" for more information
 1. Create a conda environment / virtual env with the python version "3.10.12"
 2. Run the following commands
 `
-# gym 0.21 installation is broken with more recent versions
 pip install setuptools==65.5.0 pip==21  
 pip install wheel==0.38.0
 pip -qq install stable-baselines3==1.6.0
 pip install -qq gym-super-mario-bros
-# for ensuring tensorboard works
 pip install tensorflow
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 `
