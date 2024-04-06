@@ -5,6 +5,8 @@
 
 <u> References:</u>
 
+* Instead of tensorboard we can use wandb -> https://docs.wandb.ai/guides/integrations/stable-baselines-3
+
 1. DQN/DDQN
 *  https://pytorch.org/tutorials/intermediate/mario_rl_tutorial.html
 *  https://github.com/Kautenja/playing-mario-with-deep-reinforcement-learning/tree/master
