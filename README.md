@@ -11,15 +11,15 @@ Refer to "report/Project Proposal.pdf" for more information
 ## Setup
 
 1. Create a conda environment / virtual env with the python version "3.10.12"
-2. Run the following commands
-`
+2. Run the following commands:
+
 pip install setuptools==65.5.0 pip==21  
 pip install wheel==0.38.0
 pip -qq install stable-baselines3==1.6.0
 pip install -qq gym-super-mario-bros
 pip install tensorflow
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-`
+
 3. Install nes-py by following the instructions from https://github.com/Kautenja/nes-py based on your OS.
 4. Try running the code under agents/random/agent.py to check if the environment is set up correctly. It should additionally save a play under the data folder.
 5. Try running the code under agents/human/agent.py to play a custom game (refer to manual play controls below). It should additionally save a play under the data folder. 
