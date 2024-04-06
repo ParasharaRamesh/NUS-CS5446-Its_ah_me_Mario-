@@ -4,16 +4,12 @@ Idea is to use this class to ensure that people can play and record their perfor
 This code is modified from nes_py.app.play_human file from nes_py python module
 
 '''
-import gym_super_mario_bros
-from gym_super_mario_bros.actions import SIMPLE_MOVEMENT
 from nes_py._image_viewer import ImageViewer
-from nes_py.wrappers import JoypadSpace
 import gym
 import time
 from pyglet import clock
-import pickle
-from tqdm import tqdm
 
+from game.environment import create_gym_env_from_level
 from utils.record import save_play
 
 # the sentinel value for "No Operation"
@@ -118,11 +114,11 @@ if __name__ == '__main__':
     # this is the pixelated version!
     # version = 2
 
-    # SuperMarioBros-<world>-<stage>-v<version>
-    level = f"SuperMarioBros-{world}-{stage}-v{version}"
+    use_coin_collector_env = True
+    level_suffix = f"{world}-{stage}-v{version}"
+    level = f"SuperMarioBros-{level_suffix}" if not use_coin_collector_env else f"CoinCollectorSuperMarioBrosEnv-{level_suffix}"
 
     # sample level can be changed
-    env = gym_super_mario_bros.make(level)
-    env = JoypadSpace(env, SIMPLE_MOVEMENT)
+    env = create_gym_env_from_level(world, stage, version, use_coin_collector_env)
 
     record_with_human_play(env, record=False, level=level)
