@@ -1,3 +1,6 @@
+# Checkpoints
+agents/ddqn/checkpoints/
+
 # Recorded plays
 data/
 
