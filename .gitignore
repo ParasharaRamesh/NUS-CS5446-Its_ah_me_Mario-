@@ -1,5 +1,9 @@
 # Checkpoints
 agents/ddqn/checkpoints/
+*.zip
+*.mp4
+*.DS_Store
+*.json
 
 # Recorded plays
 data/
