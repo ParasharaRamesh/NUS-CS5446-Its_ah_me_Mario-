@@ -1,8 +1,18 @@
 # Checkpoints
 agents/ddqn/checkpoints/
+*.zip
+*.mp4
+*.DS_Store
+*.json
 
 # Recorded plays
 data/
+diaiplan
+diaiplan.pub
+*.zip
+*.mp4
+*.json
+!agents/ppo/mario_plays/IMPORTANT/*.mp4
 
 # PyCharm
 .idea/
