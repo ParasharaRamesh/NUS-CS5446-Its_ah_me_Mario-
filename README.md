@@ -4,9 +4,7 @@ This repository contains project code/report for the CS5446 AI Planning course @
 
 ## About
 
-We plan to implement some of the popular RL algorithms on the super mario bros game and evaluate the performances of each agent comprehensively.
-
-Refer to "report/Project Proposal.pdf" for more information
+Refer to the files under the "report" directory for more information on our initial project proposal along with our finished final report
 
 ## Setup
 
